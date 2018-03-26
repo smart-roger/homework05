@@ -7,36 +7,36 @@
 //  Класс для построения фигур
 class TShapeBuilder
 {
-    public:
+	public:
 
-        TShapeBuilder() {}
-        ~TShapeBuilder() {}
+		TShapeBuilder() {}
+		~TShapeBuilder() {}
 
-        //  Задание типа фигуры
-        void setShapeType(Shape::shapeType type){
-            _currentType = type;
-        };
+		//  Задание типа фигуры
+		void setShapeType(Shape::shapeType type){
+			_currentType = type;
+		};
 
-        //  Задание параметров фигуры
-        void setParam(std::string paramName, std::string paramValue){
-            _params.push_back(std::make_pair(paramName, paramValue));
-        };
+		//  Задание параметров фигуры
+		void setParam(std::string paramName, std::string paramValue){
+			_params.push_back(std::make_pair(paramName, paramValue));
+		};
 
-        //  Непосредственное построение фигуры с переданными параметрами.
-        std::shared_ptr<Shape> getShape(){
-            return createShape();
-        };
+		//  Непосредственное построение фигуры с переданными параметрами.
+		std::shared_ptr<Shape> getShape(){
+			return createShape();
+		};
 
 
 
-    protected:
-        //  Хранение переданных параметров фигуры
-        Shape::shapeType  _currentType;
-        std::vector<Shape::param>  _params;
+	protected:
+		//  Хранение переданных параметров фигуры
+		Shape::shapeType  _currentType;
+		std::vector<Shape::param>  _params;
 
-        //  Непосредственное построение фигуры
-        std::shared_ptr<Shape> createShape();
-    private:
+		//  Непосредственное построение фигуры
+		std::shared_ptr<Shape> createShape();
+	private:
 
 
 };

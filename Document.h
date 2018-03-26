@@ -7,7 +7,7 @@
 #include "TShapeContainer.h"
 
 /*! Класс для работы с документом
-    Обеспечивает работу с настройками документа, агрегирует работу с примитивами
+	Обеспечивает работу с настройками документа, агрегирует работу с примитивами
 */
 
 class Document{
@@ -27,11 +27,11 @@ class Document{
 	void setSettings(std::string newSettings){_settings = newSettings;};
 
 	void addShape(std::shared_ptr<Shape> shapeNew){
-	    _shapes.addNewShape(shapeNew);
+		_shapes.addNewShape(shapeNew);
 	}
 
-    void removeShape(std::shared_ptr<Shape> shapeRemove){
-	    _shapes.removeShape(shapeRemove);
+	void removeShape(std::shared_ptr<Shape> shapeRemove){
+		_shapes.removeShape(shapeRemove);
 	}
 
 	TShapeContainer shapes() const {return _shapes;}

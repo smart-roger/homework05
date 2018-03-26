@@ -17,13 +17,13 @@ class Document;
 class UI{
 
 	private:
-    //  Текущий контроллер, отображаемый GUI
+	//  Текущий контроллер, отображаемый GUI
 	Controller*	_controller;
 
 	//  Отрисовка изображения на экране
 	void render(const std::shared_ptr<Document> document){
-        TShapeContainer _container(document->shapes());
-        std::for_each(_container.begin(), _container.end(), [](auto shape){shape->draw();});
+		TShapeContainer _container(document->shapes());
+		std::for_each(_container.begin(), _container.end(), [](auto shape){shape->draw();});
 	};
 
 	public:

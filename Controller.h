@@ -16,8 +16,8 @@ class Document;
 /*! Определение интерфейса для контроллера. Разделение интерфейса и реализации.*/
 class TControllerIface{
 public:
-    virtual void setUI(std::shared_ptr<UI> newUI) = 0;
-    virtual std::shared_ptr<Document>   currentDoc() = 0;
+	virtual void setUI(std::shared_ptr<UI> newUI) = 0;
+	virtual std::shared_ptr<Document>   currentDoc() = 0;
 
 	virtual void onCreate(std::string settings) = 0;
 	virtual void onImport(std::string settings)=0;
@@ -31,9 +31,9 @@ public:
 /*! Реализация контроллера с описанным интерфейсом.
 */
 class Controller : public TControllerIface{
-    //  Обрабатываемый документ
+	//  Обрабатываемый документ
 	std::shared_ptr<Document>	_doc;
-    //  Привязанный UI
+	//  Привязанный UI
 	std::shared_ptr<UI>		_ui;
 
 	public:
@@ -62,27 +62,27 @@ class Controller : public TControllerIface{
 
 	//- экспорт документа в файл
 	void onExport(const std::string& settings){
-	    DocHelper exporter;
+		DocHelper exporter;
 		exporter.ExportDoc(_doc, settings);
 	};
 
 	//- создание графического примитива
 	void onCreateShape(Shape::shapeType type, std::vector<Shape::param> params){
-        std::cout << "Create shape. " << std::endl;
-        TShapeBuilder shapeBuilder;
-        shapeBuilder.setShapeType(type);
-        for(param : params){
-            shapeBuilder.setParam(param.first, param.second);
-        }
+		std::cout << "Create shape. " << std::endl;
+		TShapeBuilder shapeBuilder;
+		shapeBuilder.setShapeType(type);
+		for(auto param : params){
+			shapeBuilder.setParam(param.first, param.second);
+		}
 
-        _doc->addShape(shapeBuilder.getShape());
+		_doc->addShape(shapeBuilder.getShape());
 
 	};
 
 	//  Удаление фигуры
 	void onDeleteShape(std::shared_ptr<Shape> shapeRemove){
-	    _doc->removeShape(shapeRemove);
-        std::cout << "Delete shape. " << std::endl;
+		_doc->removeShape(shapeRemove);
+		std::cout << "Delete shape. " << std::endl;
 	};//- удаление графического примитива
 };
 

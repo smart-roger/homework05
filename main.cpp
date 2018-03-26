@@ -7,7 +7,7 @@
 */
 int main(int argc, char const *argv[])
 {
-    //  GUI
+	//  GUI
 	auto mainWindow = std::make_shared<UI>();
 	//  Контроллер
 	TControllerIface* _controller = new Controller;
