@@ -32,17 +32,17 @@ class Shape{
 //  Реализация графических примитивов с заданным интерфейсом.
 
 class Line : public Shape{
-    virtual void draw(){std::cout << "draw line" << std::endl;}
+    virtual void draw() override {std::cout << "draw line" << std::endl;}
     virtual void setParam(std::string param, std::string value) override {std::cout << "Line: " << param<<"\t"<<value<<std::endl;}
 };
 
 class Polygon : public Shape{
-    virtual void draw(){std::cout << "draw polygon" << std::endl;}
+    virtual void draw() override {std::cout << "draw polygon" << std::endl;}
     virtual void setParam(std::string param, std::string value) override {std::cout << "Polygon: " << param<<"\t"<<value<<std::endl;}
 };
 
 class Circle : public Shape{
-    virtual void draw(){std::cout << "draw circle" << std::endl;}
+    virtual void draw() override {std::cout << "draw circle" << std::endl;}
     virtual void setParam(std::string param, std::string value) override {std::cout << "Circle: " << param<<"\t"<<value<<std::endl;}
 };
 
