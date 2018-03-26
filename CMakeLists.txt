@@ -1,6 +1,6 @@
 ﻿cmake_minimum_required(VERSION 3.2)
 
-project(vector_editor VERSION 0.0.0)
+project(vector_editor VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Doxygen)
  if(DOXYGEN_FOUND)
