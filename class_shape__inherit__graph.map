@@ -1,0 +1,5 @@
+<map id="Shape" name="Shape">
+<area shape="rect" id="node2" href="$class_circle.html" title="{Circle\n||}" alt="" coords="5,176,60,253"/>
+<area shape="rect" id="node3" href="$class_line.html" title="{Line\n||}" alt="" coords="86,176,132,253"/>
+<area shape="rect" id="node4" href="$class_polygon.html" title="{Polygon\n||}" alt="" coords="157,176,227,253"/>
+</map>

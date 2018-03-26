@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>vector_editor: Исходный файл TShapeBuilder.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">vector_editor
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Определения типов</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">TShapeBuilder.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_t_shape_builder_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TSHAPEBUILDER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TSHAPEBUILDER_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_shape_8h.html">Shape.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//  Класс для построения фигур</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_t_shape_builder.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_t_shape_builder.html">TShapeBuilder</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_t_shape_builder.html#a6e6442adba1f53477b54a1e51016f56c">   12</a></span>&#160;        <a class="code" href="class_t_shape_builder.html#a6e6442adba1f53477b54a1e51016f56c">TShapeBuilder</a>() {}</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_t_shape_builder.html#af4c3b614ef18af9ae8353c171c1817dc">   13</a></span>&#160;        <a class="code" href="class_t_shape_builder.html#af4c3b614ef18af9ae8353c171c1817dc">~TShapeBuilder</a>() {}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="comment">//  Задание типа фигуры</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_t_shape_builder.html#a566afa660103b9c07669ad149ebbd73f">   16</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_t_shape_builder.html#a566afa660103b9c07669ad149ebbd73f">setShapeType</a>(<a class="code" href="class_shape.html#aaac58aa2f6760d0f06ec1710d5123e9b">Shape::shapeType</a> type){</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="class_t_shape_builder.html#a4ef7332cb3f9ce517c0c6b1f6ed02c07">_currentType</a> = type;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        };</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="comment">//  Задание параметров фигуры</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_t_shape_builder.html#a35c9bc41c02be9b2de14283db908bced">   21</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_t_shape_builder.html#a35c9bc41c02be9b2de14283db908bced">setParam</a>(std::string paramName, std::string paramValue){</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="class_t_shape_builder.html#a81bf627a8bef4f88476f279a71b8b92e">_params</a>.push_back(std::make_pair(paramName, paramValue));</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        };</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">//  Непосредственное построение фигуры с переданными параметрами.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_t_shape_builder.html#add5ea320a6faa5fae6467c6a53817cc6">   26</a></span>&#160;        std::shared_ptr&lt;Shape&gt; <a class="code" href="class_t_shape_builder.html#add5ea320a6faa5fae6467c6a53817cc6">getShape</a>(){</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_t_shape_builder.html#ac09b5a8eb2c89a992ad821d738d05dd3">createShape</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_t_shape_builder.html#a4ef7332cb3f9ce517c0c6b1f6ed02c07">   28</a></span>&#160;        };</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">//  Хранение переданных параметров фигуры</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="class_shape.html#aaac58aa2f6760d0f06ec1710d5123e9b">Shape::shapeType</a>  <a class="code" href="class_t_shape_builder.html#a4ef7332cb3f9ce517c0c6b1f6ed02c07">_currentType</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_t_shape_builder.html#a81bf627a8bef4f88476f279a71b8b92e">   35</a></span>&#160;        std::vector&lt;Shape::param&gt;  <a class="code" href="class_t_shape_builder.html#a81bf627a8bef4f88476f279a71b8b92e">_params</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">//  Непосредственное построение фигуры</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        std::shared_ptr&lt;Shape&gt; <a class="code" href="class_t_shape_builder.html#ac09b5a8eb2c89a992ad821d738d05dd3">createShape</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif // TSHAPEBUILDER_H</span></div>
+<div class="ttc" id="_shape_8h_html"><div class="ttname"><a href="_shape_8h.html">Shape.h</a></div></div>
+<div class="ttc" id="class_t_shape_builder_html_a35c9bc41c02be9b2de14283db908bced"><div class="ttname"><a href="class_t_shape_builder.html#a35c9bc41c02be9b2de14283db908bced">TShapeBuilder::setParam</a></div><div class="ttdeci">void setParam(std::string paramName, std::string paramValue)</div><div class="ttdef"><b>Definition:</b> TShapeBuilder.h:21</div></div>
+<div class="ttc" id="class_t_shape_builder_html_a4ef7332cb3f9ce517c0c6b1f6ed02c07"><div class="ttname"><a href="class_t_shape_builder.html#a4ef7332cb3f9ce517c0c6b1f6ed02c07">TShapeBuilder::_currentType</a></div><div class="ttdeci">Shape::shapeType _currentType</div><div class="ttdef"><b>Definition:</b> TShapeBuilder.h:28</div></div>
+<div class="ttc" id="class_t_shape_builder_html_a6e6442adba1f53477b54a1e51016f56c"><div class="ttname"><a href="class_t_shape_builder.html#a6e6442adba1f53477b54a1e51016f56c">TShapeBuilder::TShapeBuilder</a></div><div class="ttdeci">TShapeBuilder()</div><div class="ttdef"><b>Definition:</b> TShapeBuilder.h:12</div></div>
+<div class="ttc" id="class_t_shape_builder_html_af4c3b614ef18af9ae8353c171c1817dc"><div class="ttname"><a href="class_t_shape_builder.html#af4c3b614ef18af9ae8353c171c1817dc">TShapeBuilder::~TShapeBuilder</a></div><div class="ttdeci">~TShapeBuilder()</div><div class="ttdef"><b>Definition:</b> TShapeBuilder.h:13</div></div>
+<div class="ttc" id="class_t_shape_builder_html_ac09b5a8eb2c89a992ad821d738d05dd3"><div class="ttname"><a href="class_t_shape_builder.html#ac09b5a8eb2c89a992ad821d738d05dd3">TShapeBuilder::createShape</a></div><div class="ttdeci">std::shared_ptr&lt; Shape &gt; createShape()</div><div class="ttdef"><b>Definition:</b> TShapeBuilder.cpp:4</div></div>
+<div class="ttc" id="class_t_shape_builder_html"><div class="ttname"><a href="class_t_shape_builder.html">TShapeBuilder</a></div><div class="ttdef"><b>Definition:</b> TShapeBuilder.h:8</div></div>
+<div class="ttc" id="class_shape_html_aaac58aa2f6760d0f06ec1710d5123e9b"><div class="ttname"><a href="class_shape.html#aaac58aa2f6760d0f06ec1710d5123e9b">Shape::shapeType</a></div><div class="ttdeci">shapeType</div><div class="ttdef"><b>Definition:</b> Shape.h:14</div></div>
+<div class="ttc" id="class_t_shape_builder_html_add5ea320a6faa5fae6467c6a53817cc6"><div class="ttname"><a href="class_t_shape_builder.html#add5ea320a6faa5fae6467c6a53817cc6">TShapeBuilder::getShape</a></div><div class="ttdeci">std::shared_ptr&lt; Shape &gt; getShape()</div><div class="ttdef"><b>Definition:</b> TShapeBuilder.h:26</div></div>
+<div class="ttc" id="class_t_shape_builder_html_a81bf627a8bef4f88476f279a71b8b92e"><div class="ttname"><a href="class_t_shape_builder.html#a81bf627a8bef4f88476f279a71b8b92e">TShapeBuilder::_params</a></div><div class="ttdeci">std::vector&lt; Shape::param &gt; _params</div><div class="ttdef"><b>Definition:</b> TShapeBuilder.h:35</div></div>
+<div class="ttc" id="class_t_shape_builder_html_a566afa660103b9c07669ad149ebbd73f"><div class="ttname"><a href="class_t_shape_builder.html#a566afa660103b9c07669ad149ebbd73f">TShapeBuilder::setShapeType</a></div><div class="ttdeci">void setShapeType(Shape::shapeType type)</div><div class="ttdef"><b>Definition:</b> TShapeBuilder.h:16</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>
