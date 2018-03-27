@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['setcontroller',['setController',['../class_u_i.html#a81b2d0282e916d036c3fb7c515c573bb',1,'UI']]],
+  ['setcontroller',['setController',['../class_u_i.html#a36dd29fe36eb0190443db19a042560d8',1,'UI']]],
   ['setdocument',['setDocument',['../class_controller.html#aef4adbecaf84907d38ea9cc868837102',1,'Controller']]],
   ['setparam',['setParam',['../class_shape.html#a137b6d345366a5e2a7a1d9236ddbedde',1,'Shape::setParam()'],['../class_t_shape_builder.html#a35c9bc41c02be9b2de14283db908bced',1,'TShapeBuilder::setParam()']]],
   ['setsettings',['setSettings',['../class_document.html#a12243204d5dc131713b8eaf28a681aa8',1,'Document']]],

@@ -1,4 +1,3 @@
 <map id="UI::exportDoc" name="UI::exportDoc">
-<area shape="rect" id="node2" href="$class_controller.html#ac5ea364b3f1ee6cc6be65348baa40413" title="Controller::onExport" alt="" coords="157,5,296,32"/>
-<area shape="rect" id="node3" href="$class_doc_helper.html#abf522ec42f45cfad3a142cd55c44ac95" title="DocHelper::ExportDoc" alt="" coords="344,5,499,32"/>
+<area shape="rect" id="node2" href="$class_t_controller_iface.html#a744e101acd7ca1161e4971f0de7255ce" title="TControllerIface::onExport" alt="" coords="158,5,333,32"/>
 </map>
