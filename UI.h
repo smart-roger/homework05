@@ -10,7 +10,7 @@
 #include <vector>
 #include <string>
 
-class Controller;
+class TControllerIface;
 class Document;
 
 /*! Класс для GUI*/
@@ -18,7 +18,7 @@ class UI{
 
 	private:
 	//  Текущий контроллер, отображаемый GUI
-	Controller*	_controller;
+	TControllerIface*	_controller;
 
 	//  Отрисовка изображения на экране
 	void render(const std::shared_ptr<Document> document){
@@ -57,7 +57,7 @@ class UI{
 	void update();
 
 	/*! Связывание GUI с контроллером*/
-	void setController(Controller* newController){
+	void setController(TControllerIface* newController){
 		_controller=newController;
 	}
 };
